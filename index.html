@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="triviaApp">
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/styles/reset.css">
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <title>Trivia Trends</title>
   <link rel="shortcut icon" href="/styles/assets/crownFavicon.png">
 </head>
@@ -18,7 +18,7 @@
   <article>
     <nav>
       <a>All Questions</a>
-      <a>Easy</a>
+      <a href='#!/easy/'>Easy</a>
       <a>Medium</a>
       <a>Hard</a>
       <a>Search by Animal</a>
@@ -27,7 +27,7 @@
       <input type="text" placeholder="Animal to search by">
     </div>
 
-    <!-- Questions go here -->
+    <main ng-view></main>
 
   </article>
 
@@ -41,6 +41,7 @@
         <input type="range" min="1" max="3" ng-model="<!-- Difficulty -->">
 
         <h5>{{newQuestion.difficulty}}</h5>
+
       </div>
       <h4>Options</h4>
       <div>
@@ -81,7 +82,10 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" charset="utf-8"></script>
-  <script src="./app.js" charset="utf-8"></script>
+  <script src="https://code.angularjs.org/1.6.2/angular-route.min.js" charset="utf-8"></script>
+  <script src="./js/app.js" charset="utf-8"></script>
+  <script src="./js/mainCtrl.js" charset="utf-8"></script>
+  <script src="./js/service.js" charset="utf-8"></script>
 </body>
 
 </html>
